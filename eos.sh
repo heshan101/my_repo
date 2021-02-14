@@ -1,4 +1,8 @@
 #!/bin/bash
+#Creted by Heshan Abeywickrema
+#Purpose: To get all relevant link health information 
+#EG: <hostname>:Ethernetx/x/x
+#Platform: Arista 7300
 
 str="$1"
 
