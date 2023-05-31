@@ -1,0 +1,166 @@
+copying parameters over from job:7114857
+
+This is NOT a dryrun: use --dry-run if you intended for this to be one
+
+ATTENTION: THIS TOOL IS AN INVASIVE NETWORK TOOL and requires you to THINK BEFORE YOU PROCEED.
+
+SKIPPING SAFETY CHECKS/AUDITS IS A DANGEROUS ACTIVITY and the option has been removed/renamed
+as they are here to protect Facebook and you the network operator.
+
+If you cannot do your job without skipping audits please work with nds_operation who will connect you with the appropriate network product owner to verify safety.
+
+Request submitted under ID: 7184870
+Web UI: https://internalfb.com/drainer/job/7184870
+
+2023-03-16 12:09:34 PDT   INFO   Starting job handler for Drain Job: 7184870
+2023-03-16 12:09:34 PDT   INFO   Job mode: UNDRAIN
+2023-03-16 12:09:34 PDT   INFO   Undrain Options: UndrainOptions(
+    req_id=7114857,
+    to_clear=['7114857'])
+2023-03-16 12:09:34 PDT   INFO   Task running on tsp_ftw/neteng/drainer/2
+2023-03-16 12:09:34 PDT   INFO   Created node for request 7184870 in zeus: /neteng_drainer/prod/jobs/7184870
+2023-03-16 12:09:34 PDT   INFO   Attempting to acquire locks for ['fsw008.p068.f01.pnb6', 'rsw038.p068.f01.pnb6']
+2023-03-16 12:09:34 PDT   INFO   Locks acquired
+2023-03-16 12:09:34 PDT   INFO   Running stage request: remove_references
+2023-03-16 12:09:34 PDT   INFO   Number of references removed: 0 for req: [7114857]
+2023-03-16 12:09:34 PDT   INFO   no_op items: set()
+2023-03-16 12:09:34 PDT   INFO   dec_ref items: set()
+2023-03-16 12:09:34 PDT   INFO   Keeping Drainable: unique=UniqueItem(element_type=0, external_id=10295412, is_promoted=False, display_name=None, stackable=True), drainable=Configerator: neteng/drainer/drainables/rsw/generic_rack_interface (fsw008.p068.f01.pnb6:eth7/2/1)
+2023-03-16 12:09:34 PDT   INFO   Keeping non-DB backed Drainable: Configerator: neteng/drainer/drainables/fboss/fboss_interface_otag_noop (rsw038.p068.f01.pnb6:OTAG_eth1/15/1)
+2023-03-16 12:09:34 PDT   INFO   Keeping Drainable: unique=UniqueItem(element_type=0, external_id=10295412, is_promoted=False, display_name=None, stackable=True), drainable=Python: neteng/drainer/drainables/fboss_interface - (rsw038.p068.f01.pnb6:eth1/15/1)
+2023-03-16 12:09:34 PDT   INFO   Keeping Drainable: unique=UniqueItem(element_type=0, external_id=10295412, is_promoted=False, display_name=None, stackable=True), drainable=Configerator: neteng/drainer/drainables/rsw/generic_rack_interface (rsw038.p068.f01.pnb6:eth1/15/1)
+2023-03-16 12:09:34 PDT   INFO   Checking FBOSS driver for: fsw008.p068.f01.pnb6:eth7/2/1
+2023-03-16 12:09:34 PDT   INFO   Checking FBOSS driver for: rsw038.p068.f01.pnb6:OTAG_eth1/15/1
+2023-03-16 12:09:34 PDT   INFO   Checking FBOSS driver for: rsw032023-03-16 12:09:39 PDT   INFO   NHS Request ID: 7184839-05dd58a7-65fb-4070-a4bf-462901f73027
+2023-03-16 12:09:39 PDT   INFO   NHS Scuba samples: https://fburl.com/scuba/network_health_service/9p60wjwy
+2023-03-16 12:09:40 PDT   INFO   Rows updated: 1
+2023-03-16 12:09:40 PDT   INFO   NHS checks: SUCCEEDED
+2023-03-16 12:09:40 PDT   INFO   Executed stage in 73550 ms: global_precheck_nhs
+2023-03-16 12:09:40 PDT   INFO   Running stage request: global_precheck_audits
+2023-03-16 12:09:40 PDT   INFO   Global pre undrain audits to run: 0
+2023-03-16 12:09:40 PDT   INFO   All non-blocking audits have passed. Proceeding with job
+2023-03-16 12:09:40 PDT   INFO   Executed stage in 491 ms: global_precheck_audits
+2023-03-16 12:09:40 PDT   INFO   Running stage request: notification_update
+2023-03-16 12:09:40 PDT   INFO   Logging the following to t148036873 and IRC (#netmaint): DRAINER: UNDRAIN fsw007.p090.f01.pnb6 by habeywickrema. Task: T148036873. Job: 7184839. WebUI: https://fburl.com/network/iel834jj
+2023-03-16 12:09:42 PDT   INFO   Executed stage in 1681 ms: notification_update
+2023-03-16 12:09:42 PDT   INFO   Running stage request: begin_object_drains
+2023-03-16 12:09:42 PDT   INFO   Created Opsstream event:  6002229589891378
+2023-03-16 12:09:42 PDT   INFO   Fetching drivers for 1 drainables
+2023-03-16 12:09:42 PDT   INFO   Creating Drain Events
+2023-03-16 12:09:42 PDT   INF2023-03-16 12:10:10 PDT   INFO   NHS Scuba samples(Failed checks only): https://fburl.com/scuba/network_health_service/9kem32se
+2023-03-16 12:10:10 PDT   INFO   NHS Request ID: 7184870-d77730c6-3187-4b22-860f-04e31df2c7f9
+2023-03-16 12:10:10 PDT   INFO   NHS Scuba samples: https://fburl.com/scuba/network_health_service/mqn5zx1t
+2023-03-16 12:10:10 PDT   INFO   Rows updated: 2
+2023-03-16 12:10:10 PDT  ERROR   NHS checks failed
+2023-03-16 12:10:10 PDT   INFO   Executed stage in 35741 ms: global_precheck_nhs
+2023-03-16 12:10:10 PDT   INFO   Done running stages with the lock
+2023-03-16 12:10:10 PDT  ERROR   No next stage received, something likely went wrong. Done processing request.
+2023-03-16 12:10:10 PDT   INFO   Releasing locks: ['fsw008.p068.f01.pnb6', 'rsw038.p068.f01.pnb6']
+2023-03-16 12:10:10 PDT   INFO   released locks
+2023-03-16 12:10:10 PDT   INFO   Deleting node: /neteng_drainer/prod/jobs/7184870
+request reached terminal status: NHS_CHECK_FAILED
+
+Web UI: https://internalfb.com/drainer/job/7184870
+ start_ts=None, disruption_expected=None, datasources=None, checks=None, exclude_datasources=None, exclude_checks=None, entity_type=None, resolve_entity=None, exclude_checks_regex=None, caller_proxy_context=CallerProxyContext(caller_job_id='7184839', caller_name='fbcode:neteng/drainer/cligo:cligo', drainer_maintenance_type=<MaintType.EMERGENCY: 1>), context=None) at Stage: Stage.PRE_UNDRAIN
+2023-03-16 12:09:43 PDT   INFO   [fsw007.p090.f01.pnb6] No NHS checks configured for device: fsw007.p090.f01.pnb6
+2023-03-16 12:09:43 PDT   INFO   [fsw007.p090.f01.pnb6] NHS Request ID: None
+2023-03-16 12:09:43 PDT   INFO   [fsw007.p090.f01.pnb6] NHS Scuba samples: https://fburl.com/scuba/network_health_service/yyl4ix9y
+2023-03-16 12:09:43 PDT   INFO   [fsw007.p090.f01.pnb6] Running stage: pre_stage_audits
+2023-03-16 12:09:43 PDT   INFO   [fsw007.p090.f01.pnb6] Beginning new stage group for event: 0
+2023-03-16 12:09:43 PDT   INFO   [fsw007.p090.f01.pnb6] Executing pre stage audits
+2023-03-16 12:09:43 PDT   INFO   [fsw007.p090.f01.pnb6] PRE_UNDRAIN audits to run: stage=0 0
+2023-03-16 12:09:44 PDT   INFO   [fsw007.p090.f01.pnb6] All non-blocking audits have passed, wrapping up stage
+2023-03-16 12:09:44 PDT   INFO   [fsw007.p090.f01.pnb6] Running stage: perform_drain
+2023-03-16 12:09:44 PDT   INFO   [fsw007.p090.f01.pnb6] Beginning to undrain fsw007.p090.f01.pnb6
+2023-03-16 12:09:47 PDT   INFO   [fsw007.p090.f01.pnb6] Finished undraining fsw007.p090.f01.pnb6
+2023-03-16 12:09:47 PDT   INFO   [fsw007.p090.f01.pnb6] Stage 0 drain config returned:
+fsw007.p090.f01.pnb6 - Undrained on T148036873
+2023-03-16 12:09:47 PDT   INFO   [fsw007.p090.f01.pnb6] Running stage: post_stage_audits
+2023-03-16 12:09:47 PDT   INFO   [fsw007.p090.f01.pnb6] POST_UNDRAIN audits to run: stage=0 0
+2023-03-16 12:09:48 PDT   INFO   [fsw007.p090.f01.pnb6] All non-blocking audits have passed, wrapping up stage
+2023-03-16 12:09:48 PDT   INFO   [fsw007.p090.f01.pnb6] Running stage: pre_stage_audits
+2023-03-16 12:09:48 PDT   INFO   [fsw007.p090.f01.pnb6] Running stage: update_peering_policy
+2023-03-16 12:09:48 PDT   INFO   [fsw007.p090.f01.pnb6] Running stage: finish_job
+2023-03-16 12:09:48 PDT   INFO   [fsw007.p090.f01.pnb6] No more stages left to complete!
+2023-03-16 12:09:48 PDT   INFO   [fsw007.p090.f01.pnb6] Setting items as undrained in database and FBNet
+2023-03-16 12:09:49 PDT   INFO   [fsw007.p090.f01.pnb6] Updated Drain attribute for 1 objects
+2023-03-16 12:09:51 PDT   INFO   [fsw007.p090.f01.pnb6] No more stages left to run.  Finishing cleanly
+2023-03-16 12:09:51 PDT   INFO   [fsw007.p090.f01.pnb6] duration: 5.483 secs
+2023-03-16 12:09:51 PDT   INFO   Done with all Drain events
+2023-03-16 12:09:51 PDT   INFO   Executed stage in 9032 ms: begin_object_drains
+2023-03-16 12:09:51 PDT   INFO   Releasing locks: ['fsw007.p090.f01.pnb6']
+2023-03-16 12:09:51 PDT   INFO   released locks
+2023-03-16 12:09:51 PDT   INFO   Running stage request: check_if_reopt_needed
+2023-03-16 12:09:51 PDT   INFO   Executed stage in 0 ms: check_if_reopt_needed
+2023-03-16 12:09:51 PDT   INFO   Running stage request: global_postcheck
+2023-03-16 12:09:51 PDT   INFO   Global post undrain audits to run: 0
+2023-03-16 12:09:51 PDT   INFO   All non-blocking audits have passed. Proceeding with job
+2023-03-16 12:09:51 PDT   INFO   Executed stage in 453 ms: global_postcheck
+2023-03-16 12:09:51 PDT   INFO   Running stage request: finish_job
+2023-03-16 12:09:51 PDT   INFO   Running finish job
+2023-03-16 12:09:52 PDT   INFO   Closing Opsstream Event: {6002229589891378}
+2023-03-16 12:09:52 PDT   INFO   Executed stage in 427 ms: finish_job
+2023-03-16 12:09:52 PDT   INFO   No more stages left to execute.  Job Finished!
+2023-03-16 12:09:52 PDT   INFO   Deleting node: /neteng_drainer/prod/jobs/7184839
+request reached terminal status: UNDRAIN_COMPLETE
+
+Web UI: https://internalfb.com/drainer/job/7184839
+DT   INFO   [rsw043.p004.f01.pnb6] No NHS checks configured for device: rsw043.p004.f01.pnb6:eth1/11/1
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] NHS Request ID: None
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] All non-blocking audits have passed, wrapping up stage
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] Running stage: perform_drain
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] Stage 0 returned no config
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] NHS Scuba samples: https://fburl.com/scuba/network_health_service/j3bq5cz0
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] Running stage: post_stage_audits
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] POST_UNDRAIN audits to run: stage=0 0
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] Running stage: pre_stage_audits
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] Beginning new stage group for event: 0
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] Executing pre stage audits
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] PRE_UNDRAIN audits to run: stage=0 0
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] All non-blocking audits have passed, wrapping up stage
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] Running stage: perform_drain
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] Beginning undrain of rsw043.p004.f01.pnb6:eth1/11/1
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] All non-blocking audits have passed, wrapping up stage
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] Running stage: pre_stage_audits
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] Running stage: update_peering_policy
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] Running stage: finish_job
+2023-03-16 12:09:23 PDT   INFO   [fsw006.p004.f01.pnb6] No more stages left to complete!
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] Identified switch as rsw043.p004.f01.pnb6.tfbnw.net
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] rsw043.p004.f01.pnb6.tfbnw.net has BGP, removing BGP policy overwrite.
+2023-03-16 12:09:23 PDT   INFO   [rsw043.p004.f01.pnb6] Requesting UNDRAIN interface via Coop
+2023-03-16 12:09:25 PDT   INFO   [fsw006.p004.f01.pnb6] No configuration applied: drain_state update not needed
+2023-03-16 12:09:25 PDT   INFO   [fsw006.p004.f01.pnb6] No more stages left to run.  Finishing cleanly
+2023-03-16 12:09:25 PDT   INFO   [fsw006.p004.f01.pnb6] duration: 3.296 secs
+2023-03-16 12:09:32 PDT   INFO   [rsw043.p004.f01.pnb6] Finished undrain of rsw043.p004.f01.pnb6:eth1/11/1
+2023-03-16 12:09:32 PDT   INFO   [rsw043.p004.f01.pnb6] Stage 0 drain config returned:
+Finished undrain of rsw043.p004.f01.pnb6:eth1/11/1
+2023-03-16 12:09:32 PDT   INFO   [rsw043.p004.f01.pnb6] Running stage: post_stage_audits
+2023-03-16 12:09:32 PDT   INFO   [rsw043.p004.f01.pnb6] POST_UNDRAIN audits to run: stage=0 0
+2023-03-16 12:09:33 PDT   INFO   [rsw043.p004.f01.pnb6] All non-blocking audits have passed, wrapping up stage
+2023-03-16 12:09:33 PDT   INFO   [rsw043.p004.f01.pnb6] Running stage: pre_stage_audits
+2023-03-16 12:09:33 PDT   INFO   [rsw043.p004.f01.pnb6] Running stage: update_peering_policy
+2023-03-16 12:09:33 PDT   INFO   [rsw043.p004.f01.pnb6] Running stage: finish_job
+2023-03-16 12:09:33 PDT   INFO   [rsw043.p004.f01.pnb6] No more stages left to complete!
+2023-03-16 12:09:33 PDT   INFO   [rsw043.p004.f01.pnb6] Setting items as undrained in database and FBNet
+2023-03-16 12:09:34 PDT   INFO   [rsw043.p004.f01.pnb6] Updated Drain attribute for 1 objects
+2023-03-16 12:09:34 PDT   INFO   [rsw043.p004.f01.pnb6] No more stages left to run.  Finishing cleanly
+2023-03-16 12:09:34 PDT   INFO   [rsw043.p004.f01.pnb6] duration: 11.168 secs
+2023-03-16 12:09:34 PDT   INFO   Done with all Drain events
+2023-03-16 12:09:34 PDT   INFO   Executed stage in 12872 ms: begin_object_drains
+2023-03-16 12:09:34 PDT   INFO   Releasing locks: ['fsw006.p004.f01.pnb6', 'rsw043.p004.f01.pnb6']
+2023-03-16 12:09:34 PDT   INFO   released locks
+2023-03-16 12:09:34 PDT   INFO   Running stage request: check_if_reopt_needed
+2023-03-16 12:09:34 PDT   INFO   Executed stage in 0 ms: check_if_reopt_needed
+2023-03-16 12:09:34 PDT   INFO   Running stage request: global_postcheck
+2023-03-16 12:09:34 PDT   INFO   Global post undrain audits to run: 0
+2023-03-16 12:09:34 PDT   INFO   All non-blocking audits have passed. Proceeding with job
+2023-03-16 12:09:34 PDT   INFO   Executed stage in 397 ms: global_postcheck
+2023-03-16 12:09:34 PDT   INFO   Running stage request: finish_job
+2023-03-16 12:09:34 PDT   INFO   Running finish job
+2023-03-16 12:09:35 PDT   INFO   Closing Opsstream Event: {225598213280099}
+2023-03-16 12:09:35 PDT   INFO   Executed stage in 450 ms: finish_job
+2023-03-16 12:09:35 PDT   INFO   No more stages left to execute.  Job Finished!
+2023-03-16 12:09:36 PDT   INFO   Deleting node: /neteng_drainer/prod/jobs/7184835
+request reached terminal status: UNDRAIN_COMPLETE
+
+Web UI: https://internalfb.com/drainer/job/7184835

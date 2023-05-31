@@ -1,0 +1,6 @@
+#!/bin/bash
+#cmds for bulk diagnose
+FILE=$1
+while read LINE; do
+    netresort cmds -nwt $LINE
+         done < $FILE

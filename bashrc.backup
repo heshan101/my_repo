@@ -1,0 +1,108 @@
+# .bashrc
+# bashrc is for aliases, functions, and shell configuration intended for use in
+# interactive shells.  However, in some circumstances, bash sources bashrc even
+# in non-interactive shells (e.g., when using scp), so it is standard practice
+# to check for interactivity at the top of .bashrc and return immediately if
+# the shell is not interactive.  The following line does that; don't remove it!
+[[ $- != *i* ]] && return
+
+# Load CentOS stuff and Facebook stuff (don't remove these lines).
+source /etc/bashrc
+source /usr/facebook/ops/rc/master.bashrc
+
+# Keep oodles of command history (see https://fburl.com/bashhistory).
+HISTFILESIZE=-1
+HISTSIZE=1000000
+shopt -s histappend
+PATH=$PATH:$HOME/bin:/mnt/homedir/dalbright/bin
+# Set up personal aliases, functions, etc.  See https://fburl.com/bash.
+# ...(put your own stuff here!)...
+alias yum='dnf'
+alias p="ping6"
+alias src="source .bashrc"
+alias nmc="netmachinechecker"
+alias tjc="tuffy jerry check"
+alias dl="drainer list | grep"
+alias dle="drainer list | grep -E"
+alias dl1="drainer list | grep pnb1"
+alias dl2="drainer list | grep pnb2"
+alias dl3="drainer list | grep pnb3"
+alias dl4="drainer list | grep pnb4"
+alias dl5="drainer list | grep pnb5"
+alias dl6="drainer list | grep pnb6"
+alias dls="drainer list | grep snb"
+alias ctsw="drainer list | grep pnb6 | grep ctsw | grep LINECARD"
+alias EG="egrep 'Interface Flaps|Time Interval:|Ingress|Egress|Errors|rsw|fsw|Name|ID|Description|Admin State|Link State|Speed|Vendor|Serial|Temperature|Channel|Tx Bias\(mA\) |Rx Power\(mW\) '"
+alias watch='watch '
+alias netops='./netopslogin.sh'
+alias 8='dntt -nwt "$1"'
+#alias 9='kdestroy && kinit && /usr/local/bin/fbwallet_fetch && x509 $THRIFT_TLS_CL_CERT_PATH'
+alias 0='./bulkoutput.sh alist.txt'
+alias 6Diag='./sshpassD.sh'
+alias 7Verify='./sshpassV.sh'
+alias 400='./fourhundredgige.sh'
+alias bns='./bounce.sh'
+alias bnm='./bounce2.sh'
+alias oob='./oob.sh'
+alias amifboss='./amifboss'
+alias vmd='vm detail'
+alias vmr='vm restart'
+alias vms='vm stop'
+alias vmlt='vm log tail'
+alias lstat='looperino status'
+alias password='rotor_cli getpassword -e root\@openbmc'
+#rotor_cli getpassword -n openbmc -e root@fsw004-oob.p039.f01.pnb6.tfbnw.net
+alias save='echo $1 $2 >> drainercheck.txt'
+alias manage='management_finder -t'
+alias rc='vim .bashrc'
+alias nmcc='date; nhs is-healthy $1 --show-all-checks'
+alias mc='machinechecker $1'
+alias cid='circuitid'
+alias lpr='./lpr.sh'
+alias 2fcrd='./2fcrd.sh'
+alias 3fcrd='./3fcrd.sh'
+alias 5wfpc='./5wfpc.sh'
+alias 9_od_scp='scp habeywickrema@shellserver001.pnb3:/home/habeywickrema/*.{sh,py,txt,backup} /home/habeywickrema/'
+alias ssh='sshpass -f sshpass.txt ssh'
+###https://www.cyberciti.biz/tips/bash-shell-parameter-substitution-2.html
+
+
+function watcha() {
+    a=$(alias $1) # extract the cmd from the alias
+
+        #remove = sign and first/last ' before executing thru watch
+            watch $(echo $a | awk -F= '{print $2}'|sed 's/.$//'|sed 's/^.//')
+}
+1nrcfnc(){
+  netresort cmds -rt "${1/nwt/}" -d "$2"
+}
+8dntt(){
+  dntt -nwt "$1"
+}
+drain(){
+  drainer drain "$1" --task "$2" --tail -y
+}
+druf(){
+  drainer undrain job:"$1" --task "$2" --tail -y --force
+}
+dru(){
+    drainer undrain job:"$1" --task "$2" --tail -y
+}
+fpd(){
+  fboss -H ${1/\:/ port details }
+}
+
+circuitid() {
+  skycli search -t DesiredCircuit -c id -c a_endpoint.device.name -c a_endpoint.display_name -c a_endpoint.name -c z_endpoint.display_name -c z_endpoint.device.name -c z_endpoint.name -f a_endpoint.display_name==$1
+}
+fan(){
+  fboss -H "$1" bmc fan
+}
+power(){
+  fboss -H "$1" bmc power
+}
+temp(){
+  fboss -H "$1" bmc temp
+}
+export EDITOR='vim'
+export VISUAL='vim'
